@@ -30,6 +30,8 @@ website/
 
 * [**Wt (Web Toolkit)**](https://www.webtoolkit.eu/wt) - C++ web framework
 * [**cmark**](https://github.com/commonmark/cmark) - Markdown to HTML converter (used for rendering `.md` posts)
+* [**clang**](https://clang.llvm.org/) - C/C++ Compiler
+* [**cmake**](https://cmake.org/) - C++ Build System
 
 
 ---
@@ -38,11 +40,16 @@ website/
 
 ### 1. Dependencies:
 
-Install Wt, cmake, and cmark on system:
+Install Clang, Wt, cmake, and cmark on system:
 
 ```bash
-sudo apt install libwt-dev libcmark-dev cmake g++ libwthttp-dev
+sudo apt install libcmark-dev cmake clang
 ```
+for WT, You should compile and install wt manually:
+
+[**How to install WT**](https://www.webtoolkit.eu/wt/doc/reference/html/InstallationUnix.html) - Official Docs WT
+
+[**How to install WT**](https://misaka.bearblog.dev/wt-web-framework-untuk-cpp) - My Blog post
 
 ### 2. Build the app:
 
@@ -67,11 +74,25 @@ you can change the port if you want
 ./index --docroot . --http-address=0.0.0.0 --http-port=8080
 ```
 
+if you experience error like these when running ./index:
+```
+[info] "WServer/wthttp: fatal: Error reading: /etc/wt/wt_config.xml: <debug-level>: expecting 'script' or 'all'"
+```
+just go to:
+```
+sudo nano /etc/wt/wt_config.xml
+```
+then search debug-level tag and delete that
+```
+  <debug-level>script</debug-level>  -> delete this
+  ```
+  the error itself from wt
 
-regenerate rss:
+### regenerate rss:
 ```bash
 ./rss
 ```
+
 ---
 
 ## Note
