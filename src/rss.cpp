@@ -9,7 +9,8 @@
 
 Rss::Rss() {
     setStyleClass("blog");
-    addNew<Wt::WText>("<h3>http://localhost:3090/rss.xml</h3>");
+    addNew<Wt::WText>("<h3>RSS/Atom Feed:</h3>");
+    addNew<Wt::WText>("https://blog.hiradai.space/rss.xml");
 }
 
 

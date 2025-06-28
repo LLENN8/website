@@ -14,4 +14,7 @@ add_executable(rss generate_rss.cpp)
 
 target_include_directories(index PRIVATE include /usr/local/include)
 target_link_directories(index PRIVATE /usr/local/lib)
-target_link_libraries(index PRIVATE wt wthttp cmark) 
+target_link_libraries(index PRIVATE wt wthttp cmark)
+
+target_include_directories(rss PRIVATE include /usr/local/include)
+target_link_libraries(rss PRIVATE cmark) 
