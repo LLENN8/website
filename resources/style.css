@@ -1,3 +1,4 @@
+/* ================= GLOBAL ================== */
 @font-face {
   font-family: 'lexend';
   src: url('/resources/fonts/Lexend-Bold.ttf');
@@ -16,10 +17,10 @@ body {
   padding: 0;
   overflow-x: hidden;
   height: 100%;
-  width: 100%;
-
+  max-width: 100%;
 }
 
+/* ================= NAV ================== */
 .nav {
   display: flex;
   justify-content: center;
@@ -27,19 +28,16 @@ body {
   gap: 50px;
   list-style: none;
   margin: 0 auto;
-  padding: 20px 0;
-  padding-top: 30px;
+  padding: 30px 0   ;
   width: 100%;
   background-color: transparent;
-  position: relative;
 }
-
 
 .nav a {
   text-decoration: none;
-  color: #7b7368;            
+  color: #7b7368;
   font-size: 1rem;
-  padding-bottom: 4px;       
+  padding-bottom: 4px;
 }
 
 .nav .active a {
@@ -47,81 +45,91 @@ body {
   border-bottom: 2px solid #625d58;
 }
 
+/* ================= HOME ================== */
 .hero {
   color: #504b3f;
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: center;  
-  align-items: center;      
+  justify-content: center;
+  align-items: center;
   height: 70vh;
 }
 
 .typewriter {
-  overflow: hidden; 
-  border-right: .15em solid #504b3f; 
-  font-size: 1.4rem;
+  overflow: hidden;
+  border-right: .15em solid #504b3f;
+  font-size: 1rem;
   width: 90%;
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: 
-    typing 3.5s steps(40, end) forwards, 
-    blink-caret .75s step-end infinite;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 3.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
 }
-
 
 @keyframes typing {
   from { width: 0 }
   to { width: 15% }
 }
 
-
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #504b3f; }
 }
+
 
 .cats {
   position: fixed;
   bottom: 0;
 }
 
-/*================================================ about========================================== */
-.west-container{
-  min-height: 65vh;
+/* ================= ABOUT ================== */
+.about-wrapper {
   display: flex;
-  flex-direction: column;
-  width: 150px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.cat-peek{
+.west-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.cat-peek {
+  width: 200px;
   height: auto;
-  width: 220px;
-  margin: 20px;
-  margin-top: 20px;
-  margin-left: 150px;
+  margin-bottom: 1rem;
 }
 
 .contact {
-  padding: 4px;
-  margin-left: 100px;
+  text-align: center;
   color: #7b7368;
-  font-size: 1 rem;
-
+  font-size: 1rem;
+  padding: 0 1rem;
 }
 
-.contact li{
+.contact li {
   padding-bottom: 4px;
-
+  padding-left: 4px;
+  text-align: left;
 }
 
-.east-container{
-  flex: 1.5;
+.east-container {
+  flex: 2;
   min-width: 300px;
-  padding: 2rem;
-  position: relative;
   color: #7b7368;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .card {
@@ -130,23 +138,26 @@ body {
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
   padding: 2rem;
   text-align: center;
-  margin: 50px;
+  margin: 0 auto;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.card .cat-card{
+.cat-card {
   width: 60px;
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
 }
 
-/* ===============================BLOG===========================================*/
-
+/* ================= BLOG ================== */
 .blog {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   color: #7b7368;
 }
 
@@ -154,11 +165,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem 1.5rem;
-  margin-bottom: 2rem auto;
+  margin-bottom: 2rem;
   background-color: #fff;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 800px;
   width: 100%;
   box-sizing: border-box;
@@ -166,8 +174,8 @@ body {
   word-break: break-word;
 }
 
-/* ===============================POST===========================================*/
-.post-page{
+/* ================= POST PAGE ================== */
+.post-page {
   color: #7b7368;
   padding: 2rem 1rem;
   max-width: 800px;
@@ -177,9 +185,8 @@ body {
   text-align: justify;
 }
 
-/*=====================================footer===============================================*/
-
-.footer{
+/* ================= FOOTER ================== */
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,7 +199,6 @@ body {
 .footer a {
   color: #38f2dc;
   text-decoration: none;
-  flex-direction: column;
 }
 
 .footer a:hover {
@@ -202,5 +208,89 @@ body {
 .footer hr {
   color: #7b7368;
   width: 70vw;
-  margin:auto;
+  margin: auto;
 }
+
+/* =============== ON FUCKIN MOBILE, DAMM FUCCKKK. CSS SO MUCH PAIN =============== */
+@media screen and (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .west-container,
+  .east-container {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cat-peek {
+    margin: 0 auto 1rem;
+    width: 120px;
+    height: auto;
+  }
+
+  .contact {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card {
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .cat-card {
+    width: 50px;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .cats {
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .cats img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 12ch; } 
+  }
+}
+

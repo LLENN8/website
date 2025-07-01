@@ -33,8 +33,6 @@ MainApp::MainApp(const Wt::WEnvironment& env)
 {
     setTitle("Misa");
 
-
-    addMetaHeader("viewport", "width=device-width, initial-scale=1");
     useStyleSheet("/resources/style.css");
 
     // Navbar
